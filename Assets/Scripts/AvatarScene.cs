@@ -14,6 +14,6 @@ public class AvatarScene : MonoBehaviour
     {
         profileButton.onClick.AddListener(() => SceneManager.LoadScene("Login"));
         FAQButton.onClick.AddListener(() => SceneManager.LoadScene("FAQ"));
-        avatarButton.onClick.AddListener(() => SceneManager.LoadScene("CharacterSelectScreen"));
+        avatarButton.onClick.AddListener(() => SceneManager.LoadScene("CharacterSelectScene"));
     }
 }
