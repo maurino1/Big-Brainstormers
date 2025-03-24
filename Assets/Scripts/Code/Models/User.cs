@@ -4,6 +4,6 @@ using UnityEngine;
 [Serializable]
 public class User
 {
-    public string email;
-    public string password;
+    public string Username;
+    public string Password;
 }

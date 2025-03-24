@@ -2086,6 +2086,7 @@ GameObject:
   - component: {fileID: 1204375917}
   - component: {fileID: 1204375919}
   - component: {fileID: 1204375918}
+  - component: {fileID: 1204375920}
   m_Layer: 5
   m_Name: NavBar
   m_TagString: Untagged
@@ -2153,6 +2154,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204375916}
   m_CullTransparentMesh: 1
+--- !u!114 &1204375920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204375916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6ca839ceb4c784a9bc08c3235dc868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profileButton: {fileID: 880395456}
+  FAQButton: {fileID: 502662995}
+  avatarButton: {fileID: 1498524075}
 --- !u!1 &1251723056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,7 +3996,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900377975}
-  - component: {fileID: 1900377974}
   m_Layer: 0
   m_Name: Code
   m_TagString: Untagged
@@ -3988,21 +4003,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1900377974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900377973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6ca839ceb4c784a9bc08c3235dc868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profileButton: {fileID: 880395456}
-  FAQButton: {fileID: 502662995}
-  avatarButton: {fileID: 1498524075}
 --- !u!4 &1900377975
 Transform:
   m_ObjectHideFlags: 0
