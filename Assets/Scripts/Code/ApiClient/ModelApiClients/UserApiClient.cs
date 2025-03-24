@@ -15,6 +15,13 @@ public class UserApiClient : MonoBehaviour
         return await webClient.SendPostRequest(route, data);
     }
 
+    public async Awaitable<IWebRequestReponse> RegisterData(UserData userData)
+    {
+        string route = "/account/registerdata";
+        string data = JsonUtility.ToJson(userData);
+        return await webClient.SendPostRequest(route, data);
+    }
+
     public async Awaitable<IWebRequestReponse> Login(User user)
     {
         string route = "/account/login";

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class AvatarScene : MonoBehaviour
+public class NavBar : MonoBehaviour
 {
     public Button profileButton;
     public Button FAQButton;
