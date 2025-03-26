@@ -15,7 +15,7 @@ public class ButtonHandler : MonoBehaviour
 
         StartCoroutine(ShowButtonAfterDelay());
 
-        avatarButton.onClick.AddListener(() => SceneManager.LoadScene("CharacterSelectScene"));
+        avatarButton.onClick.AddListener(() => SceneManager.LoadScene("IntroductionAppScene"));
     }
 
     private IEnumerator ShowButtonAfterDelay()
