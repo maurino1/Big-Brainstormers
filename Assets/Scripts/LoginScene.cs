@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System;
 
 public class LoginScene : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class LoginScene : MonoBehaviour
     public TMP_InputField passwordInputRegister;
     public TMP_InputField naam;
     public TMP_InputField leeftijd;
+    public TMP_InputField dokter;
+    public TMP_InputField eersteAfspraak;
+    public TMP_Dropdown route;
     public Button registerButton;
     public Button loginButton;
     public TMP_Text errorMessageRegister;
@@ -37,13 +41,18 @@ public class LoginScene : MonoBehaviour
         string password = passwordInputRegister.text.Trim();
         string naamText = naam.text.Trim();
         string leeftijdText = leeftijd.text.Trim();
+        string dokterNaam = dokter.text.Trim();
+        string eersteAfspraakText = eersteAfspraak.text.Trim();
+        string gekozenRoute = route.options[route.value].text;
 
         // Check if any field is empty
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(naamText) || string.IsNullOrEmpty(leeftijdText))
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) ||
+            string.IsNullOrEmpty(naamText) || string.IsNullOrEmpty(leeftijdText) ||
+            string.IsNullOrEmpty(dokterNaam))
         {
             errorMessageRegister.text = "Alle velden moeten ingevuld zijn!";
             errorMessageRegister.color = Color.red;
-            return; // Stop execution if any field is empty
+            return;
         }
 
         // Validate password strength
@@ -54,21 +63,47 @@ public class LoginScene : MonoBehaviour
             return;
         }
 
-        // Validate leeftijd is a number
-        if (!int.TryParse(leeftijdText, out int leeftijdValue))
+        // Validate leeftijd
+        if (!DateTime.TryParseExact(leeftijdText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime geboortedatum))
         {
-            errorMessageRegister.text = "Leeftijd moet een getal zijn!";
+            errorMessageRegister.text = "Geboortedatum moet in het formaat dd-mm-jjjj zijn!";
             errorMessageRegister.color = Color.red;
             return;
         }
 
-        // Create User and UserData objects
-        User newUser = new User { Username = email, Password = password };
-        UserData userData = new UserData { Naam = naamText, Leeftijd = leeftijdValue };
+        // Validate eerste afspraak datum
+        DateTime? afspraakDate = null;
+        if (!string.IsNullOrWhiteSpace(eersteAfspraak.text))
+        {
+            if (DateTime.TryParseExact(eersteAfspraak.text.Trim(), "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime parsedDate))
+            {
+                afspraakDate = parsedDate;
+            }
+            else
+            {
+                errorMessageRegister.text = "Eerste afspraak moet in het formaat dd-mm-jjjj zijn!";
+                errorMessageRegister.color = Color.red;
+                return;
+            }
+        }
 
-        // Call API for registration
-        apiConnectieCode.Register(newUser);
+        // Create User and UserData objects
+        User newUser = new User { email = email, Password = password };
+        UserData userData = new UserData
+        {
+            Naam = naamText,
+            GeboorteDatum = geboortedatum,
+            Route = gekozenRoute,
+            DokterNaam = dokterNaam,
+            EersteAfspraak = afspraakDate ?? default,
+            UserId = null
+        };
+
+        // Call API for registration (adjust method signature if needed)
+        await apiConnectieCode.Register(newUser);
+        await apiConnectieCode.SendUserData(userData);
     }
+
 
     public void ClearRegisterFields()
     {
@@ -91,7 +126,7 @@ public class LoginScene : MonoBehaviour
             errorMessageLogin.color = Color.red;
             return;
         }
-            User user = new User {Username = email, Password = password};
+            User user = new User {email = email, Password = password};
         apiConnectieCode.Login(user);
     }
 
