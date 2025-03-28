@@ -4,9 +4,9 @@ using System;
 public class UserData
 {
     public string Naam;
-    public DateTime GeboorteDatum;
+    public string GeboorteDatum;
     public string Route;
     public string DokterNaam;
-    public DateTime? EersteAfspraak;
+    public string? EersteAfspraak;
     public string UserId;
 }

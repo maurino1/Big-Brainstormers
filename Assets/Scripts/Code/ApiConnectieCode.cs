@@ -61,7 +61,7 @@ public class ApiConnectieCode : MonoBehaviour
         }
     }
 
-    public async Task SendUserData(UserData userData)
+    public async Task<bool> SendUserData(UserData userData)
     {
         IWebRequestReponse webRequestResponse = await userApiClient.SendUserData(userData);
 
@@ -69,10 +69,10 @@ public class ApiConnectieCode : MonoBehaviour
         {
             case WebRequestData<string> dataResponse:
                 Debug.Log("✅ UserData succesvol opgeslagen!");
-                break;
+                return true;
             case WebRequestError errorResponse:
                 Debug.LogError("❌ Fout bij opslaan van UserData: " + errorResponse.ErrorMessage);
-                break;
+                return false;
             default:
                 throw new NotImplementedException("Onverwachte response: " + webRequestResponse.GetType());
         }
@@ -80,7 +80,7 @@ public class ApiConnectieCode : MonoBehaviour
 
 
     [ContextMenu("User/Login")]
-    public async void Login(User user)
+    public async Task<bool> Login(User user)
     {
         IWebRequestReponse webRequestResponse = await userApiClient.Login(user);
 
@@ -91,13 +91,13 @@ public class ApiConnectieCode : MonoBehaviour
                 feedbackTextLogin.text = "Login succesvol!";
                 feedbackTextLogin.color = Color.green;
                 //SceneManager.LoadScene("HomeScreen"); // ✅ Ga naar de home screen na inloggen
-                break;
+                return true;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
                 Debug.LogError("❌ Login fout: " + errorMessage);
                 feedbackTextLogin.text = "Login mislukt: " + errorMessage;
                 feedbackTextLogin.color = Color.red;
-                break;
+                return false;
             default:
                 throw new NotImplementedException("Onverwachte response: " + webRequestResponse.GetType());
         }

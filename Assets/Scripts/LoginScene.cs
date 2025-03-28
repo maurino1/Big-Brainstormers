@@ -44,6 +44,7 @@ public class LoginScene : MonoBehaviour
         string dokterNaam = dokter.text.Trim();
         string eersteAfspraakText = eersteAfspraak.text.Trim();
         string gekozenRoute = route.options[route.value].text;
+        Regex validDateRegex = new Regex(@"^\d{2}-\d{2}-\d{4}$");
 
         // Check if any field is empty
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) ||
@@ -64,27 +65,20 @@ public class LoginScene : MonoBehaviour
         }
 
         // Validate leeftijd
-        if (!DateTime.TryParseExact(leeftijdText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime geboortedatum))
+        if (!validDateRegex.IsMatch(leeftijdText))
         {
-            errorMessageRegister.text = "Geboortedatum moet in het formaat dd-mm-jjjj zijn!";
+            errorMessageRegister.text = "Geboortedatum moet in het formaat dd-mm-jjjj zijn en mag geen letters bevatten!";
             errorMessageRegister.color = Color.red;
             return;
         }
 
         // Validate eerste afspraak datum
-        DateTime? afspraakDate = null;
-        if (!string.IsNullOrWhiteSpace(eersteAfspraak.text))
+        string afspraakText = eersteAfspraak.text.Trim();
+        if (!string.IsNullOrEmpty(afspraakText) && !validDateRegex.IsMatch(afspraakText))
         {
-            if (DateTime.TryParseExact(eersteAfspraak.text.Trim(), "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime parsedDate))
-            {
-                afspraakDate = parsedDate;
-            }
-            else
-            {
-                errorMessageRegister.text = "Eerste afspraak moet in het formaat dd-mm-jjjj zijn!";
-                errorMessageRegister.color = Color.red;
-                return;
-            }
+            errorMessageRegister.text = "Eerste afspraak moet in het formaat dd-mm-jjjj zijn en mag geen letters bevatten!";
+            errorMessageRegister.color = Color.red;
+            return;
         }
 
         // Create User and UserData objects
@@ -92,16 +86,22 @@ public class LoginScene : MonoBehaviour
         UserData userData = new UserData
         {
             Naam = naamText,
-            GeboorteDatum = geboortedatum,
+            GeboorteDatum = leeftijdText,
             Route = gekozenRoute,
             DokterNaam = dokterNaam,
-            EersteAfspraak = afspraakDate ?? default,
+            EersteAfspraak = string.IsNullOrWhiteSpace(afspraakText) ? null : afspraakText,
             UserId = null
         };
 
         // Call API for registration (adjust method signature if needed)
         await apiConnectieCode.Register(newUser);
-        await apiConnectieCode.SendUserData(userData);
+        await apiConnectieCode.Login(newUser);
+        bool succes = await apiConnectieCode.SendUserData(userData);
+
+        if (succes) 
+        {
+            SceneManager.LoadScene("RoadMapScene"); 
+        }
     }
 
 
@@ -127,8 +127,13 @@ public class LoginScene : MonoBehaviour
             return;
         }
             User user = new User {email = email, Password = password};
-        apiConnectieCode.Login(user);
-    }
+        bool succes = await apiConnectieCode.Login(user);
+
+        if (succes)
+        {
+            SceneManager.LoadScene("RoadMapScene");
+        }
+        }
 
     bool IsValidPassword(string password)
     {
