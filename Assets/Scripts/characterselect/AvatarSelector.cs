@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.EventSystems;
 
 public class AvatarSelector : MonoBehaviour
 {
+    public Button Roadmap;
     public Image avatarDisplay; // UI Image to display selected avatar
     public Sprite[] avatarSprites; // Array to store 6 avatar images
 
@@ -17,5 +21,9 @@ public class AvatarSelector : MonoBehaviour
         {
             Debug.LogError("Invalid Avatar Index");
         }
+    }
+    private void Start()
+    {
+        Roadmap.onClick.AddListener(() => SceneManager.LoadScene("RoadmapScene"));
     }
 }
