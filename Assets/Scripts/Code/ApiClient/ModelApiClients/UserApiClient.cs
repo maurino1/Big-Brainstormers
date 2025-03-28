@@ -15,10 +15,11 @@ public class UserApiClient : MonoBehaviour
         return await webClient.SendPostRequest(route, data);
     }
 
-    public async Awaitable<IWebRequestReponse> RegisterData(UserData userData)
+    public async Awaitable<IWebRequestReponse> SendUserData(UserData userData)
     {
-        string route = "/account/registerdata";
+        string route = "/userdata";
         string data = JsonUtility.ToJson(userData);
+
         return await webClient.SendPostRequest(route, data);
     }
 

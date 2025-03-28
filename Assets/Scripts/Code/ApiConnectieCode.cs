@@ -39,7 +39,7 @@ public class ApiConnectieCode : MonoBehaviour
     #region Login
 
     [ContextMenu("User/Register")]
-    public async void Register(User user)
+    public async Task Register(User user)
     {
         IWebRequestReponse webRequestResponse = await userApiClient.Register(user);
 
@@ -60,6 +60,24 @@ public class ApiConnectieCode : MonoBehaviour
                 throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
         }
     }
+
+    public async Task SendUserData(UserData userData)
+    {
+        IWebRequestReponse webRequestResponse = await userApiClient.SendUserData(userData);
+
+        switch (webRequestResponse)
+        {
+            case WebRequestData<string> dataResponse:
+                Debug.Log("✅ UserData succesvol opgeslagen!");
+                break;
+            case WebRequestError errorResponse:
+                Debug.LogError("❌ Fout bij opslaan van UserData: " + errorResponse.ErrorMessage);
+                break;
+            default:
+                throw new NotImplementedException("Onverwachte response: " + webRequestResponse.GetType());
+        }
+    }
+
 
     [ContextMenu("User/Login")]
     public async void Login(User user)
