@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arm-hand-hi_0: -8107753389569532458
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3e2037f091044f14cbd0b5765e4b415f
+guid: 0eaa1c87b803ee94c912780237b001e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3110990714040244613
-    second: istockphoto-177559095-612x612_0
+      213: -8339791273007411550
+    second: happysmilley_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: istockphoto-177559095-612x612_0
+      name: happysmilley_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 612
-        height: 335
+        width: 239
+        height: 211
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58958e952957c2b20800000000000000
-      internalID: 3110990714040244613
+      spriteID: 2ae8d77f50c134c80800000000000000
+      internalID: -8339791273007411550
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      istockphoto-177559095-612x612_0: 3110990714040244613
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
