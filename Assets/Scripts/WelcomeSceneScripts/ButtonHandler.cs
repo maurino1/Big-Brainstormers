@@ -19,9 +19,10 @@ public class ButtonHandler : MonoBehaviour
     }
 
     private IEnumerator ShowButtonAfterDelay()
-    {
-        yield return new WaitForSeconds(2.75f);
+    { 
 
-        avatarButton.gameObject.SetActive(true);
+    yield return new WaitForSeconds(2.75f);
+
+    avatarButton.gameObject.SetActive(true);
     }
 }
