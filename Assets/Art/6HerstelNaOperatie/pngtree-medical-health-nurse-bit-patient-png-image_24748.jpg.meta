@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 15256a807a5557d4995937ae08115133
+guid: 4064911e2950c474b94801595ed3452b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6457380841742945917
-    second: sadly_0
+      213: 664417847107739490
+    second: pngtree-medical-health-nurse-bit-patient-png-image_24748_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sadly_0
+      name: pngtree-medical-health-nurse-bit-patient-png-image_24748_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 202
-        height: 250
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7e4083b9a93d9950800000000000000
-      internalID: 6457380841742945917
+      spriteID: 26f594ff28c783900800000000000000
+      internalID: 664417847107739490
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 822734ddea4f162458df2c4a5ec1884e
+guid: 7afe702c0acae184e9427505f09ad515
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3006514252700022175
-    second: docter_0
+      213: -8418286185573252107
+    second: smiling-face-with-open-mouth-and-smiling-eyes.256x256_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: docter_0
+      name: smiling-face-with-open-mouth-and-smiling-eyes.256x256_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 175
-        height: 288
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 16a8aa36737b646d0800000000000000
-      internalID: -3006514252700022175
+      spriteID: 5f30453f05d3c2b80800000000000000
+      internalID: -8418286185573252107
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a5ce5c39daa28474888494b9caba3ac6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      docter_0: -3006514252700022175
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
