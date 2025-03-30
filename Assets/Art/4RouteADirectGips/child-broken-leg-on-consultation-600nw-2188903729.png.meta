@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      child-broken-leg-on-consultation-600nw-2188903729_0: 1698573591208084908
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
