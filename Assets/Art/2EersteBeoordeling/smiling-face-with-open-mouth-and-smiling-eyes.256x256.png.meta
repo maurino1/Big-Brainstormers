@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      smiling-face-with-open-mouth-and-smiling-eyes.256x256_0: -8418286185573252107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
