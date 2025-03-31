@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bord-verboden-te-spelen-pictogram_0: -8093115991255729067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
