@@ -11,6 +11,7 @@ public class CountdownTransition : MonoBehaviour
     [SerializeField] private GameObject currentPanel;
     [SerializeField] private GameObject nextPanel;
     [SerializeField] private Image darkenerPanel;
+    [SerializeField] private Image darkenerPanel2;
 
     [Header("Settings")]
     [SerializeField] private float countdownDuration = 10f;
@@ -57,6 +58,7 @@ public class CountdownTransition : MonoBehaviour
     private IEnumerator CountdownRoutine()
     {
         float timeLeft = countdownDuration;
+        float timeLeft2 = 3f;
 
         while (timeLeft > 0)
         {
@@ -88,6 +90,15 @@ public class CountdownTransition : MonoBehaviour
         // Switch panels
         currentPanel.SetActive(false);
         nextPanel.SetActive(true);
+
+        // show darkener panel
+        while (timeLeft2 > 0) {
+            Color newColor2 = darkenerPanel2.color;
+            newColor2.a = Mathf.Lerp(1f, 0f, (3f - timeLeft2) / 3f);
+            darkenerPanel2.color = newColor2;
+            yield return null;
+            timeLeft2 -= Time.deltaTime;
+        }
 
         // Reset for next use
         darkenerPanel.gameObject.SetActive(false);
