@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2b7e6e92043a1848a85202c8e2ba1da
+guid: 2cb1c9a821811ec4ab78ea5c34538d50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3076773623712531211
-    second: chug jug_0
+      213: 7834338504916904965
+    second: broken-arm-cast-doodle-injured-limb-in-gypsum-vector-31384597_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chug jug_0
+      name: broken-arm-cast-doodle-injured-limb-in-gypsum-vector-31384597_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 367
-        height: 462
+        x: 69
+        y: 48
+        width: 858
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b034daf2f45e2ba20800000000000000
-      internalID: 3076773623712531211
+      spriteID: 50cacb3bc5929bc60800000000000000
+      internalID: 7834338504916904965
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      chug jug_0: 3076773623712531211
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

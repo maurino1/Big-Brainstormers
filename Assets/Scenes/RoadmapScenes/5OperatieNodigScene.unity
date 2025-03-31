@@ -703,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &782292339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1369,7 +1369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -740.78, y: 263}
+  m_AnchoredPosition: {x: -740.78, y: 306}
   m_SizeDelta: {x: 285.5704, y: 204.1792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150683008
@@ -1392,11 +1392,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hier moet text komen van uitleg wat er precies gaat gebeuren.
+  m_text: 'Zometeen krijg je een masker op om naar dromenland te gaan. Daarna gaan
+    de dokters hun werk doen zodat jij straks genezen wakker worden
 
 
-    Druk
-    op het masker en gezicht om in slaap te vallen'
+    Druk op
+    het masker en gezicht om in slaap te vallen'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1492,7 +1493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1153026863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2733,12 +2734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'VERWIJDER DIT:
-
-
-    Hier moet een uitleg dat je bent wakkergeworden op
-    de kinderkamer. Als je het filmpje zelf ook even kijkt weet je misschien beter
-    wat je hier moet plaatsen'
+  m_text: Goedemorgen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2b7e6e92043a1848a85202c8e2ba1da
+guid: 0ec19586e2a218647a88a9baad79042b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3076773623712531211
-    second: chug jug_0
+      213: -4731069473005256451
+    second: gelukkig-meisje-in-yoga-pose-rustig-cartoon-kind_533410-2040_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chug jug_0
+      name: gelukkig-meisje-in-yoga-pose-rustig-cartoon-kind_533410-2040_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 367
-        height: 462
+        x: 27
+        y: 24
+        width: 572
+        height: 518
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b034daf2f45e2ba20800000000000000
-      internalID: 3076773623712531211
+      spriteID: df0c3dd616dd75eb0800000000000000
+      internalID: -4731069473005256451
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      chug jug_0: 3076773623712531211
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
