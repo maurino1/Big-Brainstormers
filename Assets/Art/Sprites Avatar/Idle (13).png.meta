@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1c338f06ab2e74916af9c7ccc6ea8cfe
+guid: b76a9ebfabf9a4cd293381feffdb2981
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4365968042431855631
-    second: Wireframe mainpage (5)_0
-  - first:
-      213: -4728877080412104574
-    second: Wireframe mainpage (5)_1
+      213: 7060466078121178284
+    second: Idle (13)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wireframe mainpage (5)_0
+      name: Idle (13)_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 282
-        width: 733
-        height: 430
+        x: 13
+        y: 61
+        width: 287
+        height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0cbbdd7dc8079c30800000000000000
-      internalID: 4365968042431855631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wireframe mainpage (5)_1
-      rect:
-        serializedVersion: 2
-        x: 681
-        y: 2
-        width: 861
-        height: 861
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 288dc8b9957af5eb0800000000000000
-      internalID: -4728877080412104574
+      spriteID: ca4bb177d70dbf160800000000000000
+      internalID: 7060466078121178284
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wireframe mainpage (5)_0: 4365968042431855631
-      Wireframe mainpage (5)_1: -4728877080412104574
+      Idle (13)_0: 7060466078121178284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
