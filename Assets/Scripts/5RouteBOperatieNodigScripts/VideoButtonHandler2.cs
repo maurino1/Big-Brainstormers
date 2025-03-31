@@ -8,7 +8,7 @@ public class VideoButtonHandler2 : MonoBehaviour
     public GameObject nextPanel;
 
     [Header("YouTube Link")]
-    public string youtubeURL = "https://youtu.be/MlzDB4y3gD4?si=1o4mTihSsup5r9Ly";
+    public string youtubeURL = "https://www.youtube.com/watch?v=MlzDB4y3gD4";
 
     public void OnButtonClick()
     {
