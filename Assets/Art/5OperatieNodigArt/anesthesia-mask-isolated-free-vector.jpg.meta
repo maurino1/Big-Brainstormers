@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      anesthesia-mask-isolated-free-vector_0: -4232863218936243678
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

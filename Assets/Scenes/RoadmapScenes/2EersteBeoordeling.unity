@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 26197093}
   - component: {fileID: 26197094}
   - component: {fileID: 26197095}
+  - component: {fileID: 26197096}
   m_Layer: 0
   m_Name: code
   m_TagString: Untagged
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d285ffe6144b474db5045425645b164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntroductionButton: {fileID: 254960794}
+  IntroductionButton: {fileID: 79178605}
 --- !u!114 &26197094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +211,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerButton: {fileID: 1126591212}
   hiddenButton: {fileID: 79178605}
+--- !u!114 &26197096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26197090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d285ffe6144b474db5045425645b164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IntroductionButton: {fileID: 254960794}
 --- !u!1 &79178603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3006514252700022175, guid: 822734ddea4f162458df2c4a5ec1884e, type: 3}
+  m_Sprite: {fileID: -3006514252700022175, guid: 805b08cead9ee6642a02e4fc2703fdf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
