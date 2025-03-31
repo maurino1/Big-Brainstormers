@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2b7e6e92043a1848a85202c8e2ba1da
+guid: 754d49f790c5248408cd326dcc964f99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3076773623712531211
-    second: chug jug_0
+      213: 5019641950302597139
+    second: Photo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chug jug_0
+      name: Photo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 367
-        height: 462
+        x: 329
+        y: 238
+        width: 219
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b034daf2f45e2ba20800000000000000
-      internalID: 3076773623712531211
+      spriteID: 3107f6332c959a540800000000000000
+      internalID: 5019641950302597139
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      chug jug_0: 3076773623712531211
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
