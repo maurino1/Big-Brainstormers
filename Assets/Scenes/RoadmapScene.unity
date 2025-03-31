@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 368776835}
   - component: {fileID: 368776836}
   m_Layer: 5
-  m_Name: Startcloud
+  m_Name: StartingCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2139,6 +2139,7 @@ RectTransform:
   m_Children:
   - {fileID: 558681519}
   - {fileID: 960405969}
+  - {fileID: 946358297}
   - {fileID: 368776832}
   - {fileID: 866964750}
   - {fileID: 1721300992}
@@ -2151,7 +2152,6 @@ RectTransform:
   - {fileID: 1109914211}
   - {fileID: 1831065546}
   - {fileID: 289997664}
-  - {fileID: 946358297}
   m_Father: {fileID: 1053141298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2572,7 +2572,7 @@ GameObject:
   - component: {fileID: 960405970}
   - component: {fileID: 960405973}
   m_Layer: 5
-  m_Name: Button
+  m_Name: NotesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2640,7 +2640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 960405971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596804689}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &960405971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,10 +2700,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 960405968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f730b4d691f7254ab5b4b99657d53a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5134ca88650574d0195874210336ca7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
+  Panel: {fileID: 596804689}
 --- !u!1 &1053141294
 GameObject:
   m_ObjectHideFlags: 0
