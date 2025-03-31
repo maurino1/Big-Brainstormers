@@ -3,24 +3,14 @@ using UnityEngine.UI;
 
 public class CanvasSwitcher : MonoBehaviour
 {
-    public Canvas startingCanvas; // De canvas die als eerste zichtbaar moet zijn
     public Canvas canvasToShow; // De canvas die je wilt laten zien
-    public Canvas canvasToHide; // De canvas die je wilt verbergen
     public Button switchButton; // De knop die de canvas wisselt
 
     void Start()
     {
-        if (startingCanvas != null)
-        {
-            startingCanvas.gameObject.SetActive(true);
-        }
         if (canvasToShow != null)
         {
-            canvasToShow.gameObject.SetActive(false);
-        }
-        if (canvasToHide != null)
-        {
-            canvasToHide.gameObject.SetActive(true);
+            canvasToShow.gameObject.SetActive(false); // Zorgt ervoor dat het canvas verborgen start
         }
         if (switchButton != null)
         {
@@ -30,10 +20,9 @@ public class CanvasSwitcher : MonoBehaviour
 
     public void SwitchCanvas()
     {
-        if (canvasToShow != null && canvasToHide != null)
+        if (canvasToShow != null)
         {
-            canvasToShow.gameObject.SetActive(true);
-            canvasToHide.gameObject.SetActive(false);
+            canvasToShow.gameObject.SetActive(true); // Laat alleen deze canvas zien
         }
     }
 }
