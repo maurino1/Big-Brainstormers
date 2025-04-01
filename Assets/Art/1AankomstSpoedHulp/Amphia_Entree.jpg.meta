@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Amphia_Entree_0: -8633720116912004085
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
