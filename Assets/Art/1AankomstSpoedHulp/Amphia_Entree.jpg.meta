@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5deddbe9688dfa44a232ef808d0ba47
+guid: dab2259a788cc4c81ac179a2a8aa2ff9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7034544227331906069
-    second: antebrachiumfractuur_0_0
+      213: -8633720116912004085
+    second: Amphia_Entree_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: antebrachiumfractuur_0_0
+      name: Amphia_Entree_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 917
-        height: 358
+        width: 1920
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51a94e244b8bf9160800000000000000
-      internalID: 7034544227331906069
+      spriteID: b04e05d0c4dde2880800000000000000
+      internalID: -8633720116912004085
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      antebrachiumfractuur_0_0: 7034544227331906069
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
