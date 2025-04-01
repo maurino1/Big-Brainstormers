@@ -2288,10 +2288,10 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: 'Route A: Geen operatie'
+    - m_Text: 'A: Geen operatie'
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 'Route B: Operatie'
+    - m_Text: 'B: Operatie'
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -2486,7 +2486,6 @@ GameObject:
   - component: {fileID: 712744168}
   - component: {fileID: 712744167}
   - component: {fileID: 712744166}
-  - component: {fileID: 712744165}
   - component: {fileID: 712744164}
   m_Layer: 0
   m_Name: WebClient
@@ -2505,19 +2504,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed4f7f0e67c302469248224d4bac5a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  webClient: {fileID: 712744168}
---- !u!114 &712744165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712744163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38452f633bae3648b55631c65e9eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   webClient: {fileID: 712744168}
@@ -2547,8 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userApiClient: {fileID: 712744164}
-  enviroment2DApiClient: {fileID: 712744166}
-  object2DApiClient: {fileID: 712744165}
+  notesApiClient: {fileID: 712744166}
   feedbackTextLogin: {fileID: 1980456295}
   feedbackTextRegister: {fileID: 1402933449}
 --- !u!114 &712744168
@@ -2563,7 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c86bd7546f1f94e9c106ea19a09157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUrl: https://avansict2236841.azurewebsites.net
+  baseUrl: https://localhost:7185
 --- !u!4 &712744169
 Transform:
   m_ObjectHideFlags: 0
@@ -6209,7 +6194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Route A: Geen operatie'
+  m_text: 'A: Geen operatie'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

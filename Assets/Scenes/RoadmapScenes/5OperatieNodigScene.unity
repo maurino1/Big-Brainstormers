@@ -703,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &782292339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1493,7 +1493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1153026863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,7 +2689,7 @@ GameObject:
   - component: {fileID: 1989516338}
   - component: {fileID: 1989516337}
   m_Layer: 5
-  m_Name: DeleteLaterText
+  m_Name: Informatie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2711,7 +2711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -706.32, y: 183}
+  m_AnchoredPosition: {x: -731, y: 186}
   m_SizeDelta: {x: 354.4951, y: 257.5005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989516337
@@ -2734,7 +2734,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Goedemorgen
+  m_text: "Lekker geslapen?\nJe bent wakker geworden op de kinderkamer waar je ouders
+    staan te wachten. Je moet nog even goed uit rusten tot je weer met je ouders
+    mee naar huis mag. \n\nRust nog maar lekker uit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

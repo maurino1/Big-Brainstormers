@@ -3,10 +3,11 @@ using System;
 [Serializable]
 public class UserData
 {
-    public string Naam;
-    public string GeboorteDatum;
-    public string Route;
-    public string DokterNaam;
-    public string? EersteAfspraak;
-    public string UserId;
+    public string id;
+    public string naam;
+    public string geboorteDatum;
+    public string route;
+    public string dokterNaam;
+    public string? eersteAfspraak;
+    public string userId;
 }

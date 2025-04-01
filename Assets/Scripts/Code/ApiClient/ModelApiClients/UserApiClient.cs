@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
@@ -46,5 +46,25 @@ public class UserApiClient : MonoBehaviour
         }
     }
 
+    public async Awaitable<IWebRequestReponse> ReadUserData()
+    {
+        string route = "/userdata";
+
+        IWebRequestReponse response = await webClient.SendGetRequest(route);
+        return ParseUserDataListResponse(response);
+    }
+
+    private IWebRequestReponse ParseUserDataListResponse(IWebRequestReponse response)
+    {
+        switch (response)
+        {
+            case WebRequestData<string> data:
+                Debug.Log("Response data raw: " + data.Data);
+                UserData userData = JsonUtility.FromJson<UserData>(data.Data); // ✅ parse single object
+                return new WebRequestData<UserData>(userData);
+            default:
+                return response;
+        }
+    }
 }
 

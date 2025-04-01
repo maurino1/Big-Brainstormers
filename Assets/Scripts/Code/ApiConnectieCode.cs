@@ -14,8 +14,7 @@ public class ApiConnectieCode : MonoBehaviour
 
     [Header("Dependencies")]
     public UserApiClient userApiClient;
-    public Environment2DApiClient enviroment2DApiClient;
-    public Object2DApiClient object2DApiClient;
+    public NotesApiClient notesApiClient;
     public TMP_Text feedbackTextLogin;
     public TMP_Text feedbackTextRegister;
 
@@ -90,7 +89,7 @@ public class ApiConnectieCode : MonoBehaviour
                 Debug.Log("✅ Login succesvol!");
                 feedbackTextLogin.text = "Login succesvol!";
                 feedbackTextLogin.color = Color.green;
-                //SceneManager.LoadScene("HomeScreen"); // ✅ Ga naar de home screen na inloggen
+                SceneManager.LoadScene("RoadmapScene"); // ✅ Ga naar de home screen na inloggen
                 return true;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
@@ -103,4 +102,76 @@ public class ApiConnectieCode : MonoBehaviour
         }
     }
     #endregion
+
+    #region NotesAndData
+
+    public async Task<Notes> ReadNotes()
+    {
+        IWebRequestReponse response = await notesApiClient.ReadNotes();
+
+        switch (response)
+        {
+            case WebRequestData<Notes> data:
+                Debug.Log("✅ Notes geladen!");
+                return data.Data;
+
+            case WebRequestError error:
+                Debug.LogError("❌ Fout bij ophalen van Notes: " + error.ErrorMessage);
+                return null;
+
+            default:
+                throw new NotImplementedException("Onverwachte response: " + response.GetType());
+        }
+    }
+
+    public async Task<bool> CreateNotes(string noteContent)
+    {
+        Notes notes = new Notes
+        {
+            content = noteContent
+        };
+
+        IWebRequestReponse response = await notesApiClient.CreateNotes(notes);
+
+        switch (response)
+        {
+            case WebRequestData<Notes> data:
+                Debug.Log("✅ Note aangemaakt!");
+                return true;
+
+            case WebRequestError error:
+                Debug.LogWarning("⚠️ Note bestaat al of aanmaak mislukt: " + error.ErrorMessage);
+                return false;
+
+            default:
+                throw new NotImplementedException("Onverwachte response: " + response.GetType());
+        }
+    }
+
+    public async Task<bool> UpdateNotes(string noteContent)
+    {
+        Notes notes = new Notes
+        {
+            content = noteContent
+        };
+
+        IWebRequestReponse response = await notesApiClient.UpdateNotes(notes);
+
+        switch (response)
+        {
+            case WebRequestData<string> _:
+                Debug.Log("✅ Note bijgewerkt!");
+                return true;
+
+            case WebRequestError error:
+                Debug.LogError("❌ Fout bij bijwerken van Notes: " + error.ErrorMessage);
+                return false;
+
+            default:
+                throw new NotImplementedException("Onverwachte response: " + response.GetType());
+        }
+    }
+
+    #endregion
+
 }

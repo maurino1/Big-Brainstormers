@@ -85,23 +85,18 @@ public class LoginScene : MonoBehaviour
         User newUser = new User { email = email, Password = password };
         UserData userData = new UserData
         {
-            Naam = naamText,
-            GeboorteDatum = leeftijdText,
-            Route = gekozenRoute,
-            DokterNaam = dokterNaam,
-            EersteAfspraak = string.IsNullOrWhiteSpace(afspraakText) ? null : afspraakText,
-            UserId = null
+            naam = naamText,
+            geboorteDatum = leeftijdText,
+            route = gekozenRoute,
+            dokterNaam = dokterNaam,
+            eersteAfspraak = string.IsNullOrWhiteSpace(afspraakText) ? null : afspraakText,
+            userId = null
         };
 
         // Call API for registration (adjust method signature if needed)
         await apiConnectieCode.Register(newUser);
         await apiConnectieCode.Login(newUser);
-        bool succes = await apiConnectieCode.SendUserData(userData);
-
-        if (succes) 
-        {
-            SceneManager.LoadScene("RoadMapScene"); 
-        }
+        await apiConnectieCode.SendUserData(userData);
     }
 
 
