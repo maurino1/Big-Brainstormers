@@ -17,6 +17,36 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoadmapScene.unity
     guid: e397fb9c7ff98464a97e1344c8281f98
+  - enabled: 1
+    path: Assets/Scenes/WelcomeScene.unity
+    guid: b7fbc6b09aefd6d4eb59bb67d3108571
+  - enabled: 1
+    path: Assets/Scenes/IntroductionAppScene.unity
+    guid: 05ead8d0d20ac2c48af23e0bbac67f18
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/1AankomstSpoedhulp.unity
+    guid: c5f47d32cd30e9a4780b93a3719adf03
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/2EersteBeoordeling.unity
+    guid: 46043d3f268ca2e4aba0a0f55d2f818c
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/3MedischOnderzoeken.unity
+    guid: bc6e2ca4c72210a4ebcb97f18d2ede7e
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/4RouteADirectGips.unity
+    guid: a7cb5a5ab357eab4f941d07e56fa612c
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/5OperatieNodigScene.unity
+    guid: 4bdd65577f3dfc74f82096041dddbb28
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/6HerstelNaOperatie.unity
+    guid: 5d248c7805913a149906831ec81028ad
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/7TerugNaarHetDagelijksLeven.unity
+    guid: 6ba40e36877d1b54985053ef742122d2
+  - enabled: 1
+    path: Assets/Scenes/RoadmapScenes/8GipsVerwijderen.unity
+    guid: 33f921fda8d86574fb1516b49661080e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
