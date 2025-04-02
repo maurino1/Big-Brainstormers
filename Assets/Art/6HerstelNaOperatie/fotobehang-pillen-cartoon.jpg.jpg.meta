@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 93720ba5efddd2049840e991a903bcb2
+guid: 689d3aeb5a6fa304791cb37f80d34bc9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6605574529338161067
-    second: scissors-graphic-clipart-design-free-png_0
+      213: 94584522553088862
+    second: fotobehang-pillen-cartoon.jpg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scissors-graphic-clipart-design-free-png_0
+      name: fotobehang-pillen-cartoon.jpg_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 872
-        height: 980
+        width: 700
+        height: 684
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5584e61a6f84454a0800000000000000
-      internalID: -6605574529338161067
+      spriteID: e5bd6044f18005100800000000000000
+      internalID: 94584522553088862
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      scissors-graphic-clipart-design-free-png_0: -6605574529338161067
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
