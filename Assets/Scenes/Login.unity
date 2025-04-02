@@ -8206,9 +8206,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 33394149}
     m_Modifications:
+    - target: {fileID: 692163509792880313, guid: db7a84e1e19dd7d4580820361fdbc8d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4702935000930082207, guid: db7a84e1e19dd7d4580820361fdbc8d8, type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702935000930082207, guid: db7a84e1e19dd7d4580820361fdbc8d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9062545250121320612, guid: db7a84e1e19dd7d4580820361fdbc8d8, type: 3}
       propertyPath: m_Pivot.x
