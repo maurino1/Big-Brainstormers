@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 public class PlanningButtonController : MonoBehaviour
 {
     public GameObject Panel;
+    public GameObject planningButton;
 
     [Header("Text Elements")]
     public TMP_Text dokterNaamText;
@@ -14,6 +15,10 @@ public class PlanningButtonController : MonoBehaviour
 
     private void Start()
     {
+        if (planningButton != null)
+        {
+            planningButton.SetActive(SessionManager.IsLoggedIn);
+        }
         dokterNaamText.text = "";
         datumAfspraakText.text = "";
         routeText.text = "";

@@ -1,88 +1,143 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.EventSystems;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System;
 
 public class LoginScene : MonoBehaviour
 {
+    [Header("Panels")]
+    public GameObject loginPanel;
+    public GameObject registerPanel1;
+    public GameObject registerPanel2;
+
+    [Header("Login Fields")]
     public TMP_InputField usernameInputLogin;
     public TMP_InputField passwordInputLogin;
+
+    [Header("Register Step 1")]
     public TMP_InputField usernameInputRegister;
     public TMP_InputField passwordInputRegister;
+
+    [Header("Register Step 2")]
     public TMP_InputField naam;
     public TMP_InputField leeftijd;
     public TMP_InputField dokter;
     public TMP_InputField eersteAfspraak;
     public TMP_Dropdown route;
-    public Button registerButton;
+
+    [Header("Buttons")]
+    public Button registerButtonStep1;
+    public Button registerButtonStep2;
     public Button loginButton;
+    public Button homeButton;
+
+    [Header("Errors")]
     public TMP_Text errorMessageRegister;
     public TMP_Text errorMessageLogin;
+
     private ApiConnectieCode apiConnectieCode;
+    private User registeredUser;
 
     private void Start()
     {
         apiConnectieCode = GameObject.FindGameObjectWithTag("WebApi").GetComponent<ApiConnectieCode>();
 
-        registerButton.onClick.AddListener(async () => await Register());
+        registerButtonStep1.onClick.AddListener(async () => await RegisterAccount());
+        registerButtonStep2.onClick.AddListener(async () => await RegisterUserData());
         loginButton.onClick.AddListener(async () => await Login());
+        homeButton.onClick.AddListener(() => SceneManager.LoadScene("RoadmapScene"));
+
+        // Initial panel states
+        loginPanel.SetActive(true);
+        registerPanel1.SetActive(false);
+        registerPanel2.SetActive(false);
 
         errorMessageLogin.text = "";
         errorMessageRegister.text = "";
     }
 
-    async Task Register()
+    public void GoToRegisterStep1()
+    {
+        loginPanel.SetActive(false);
+        registerPanel1.SetActive(true);
+    }
+
+    public void BackToLogin()
+    {
+        registerPanel1.SetActive(false);
+        loginPanel.SetActive(true);
+    }
+
+    public void BackToRegisterStep1()
+    {
+        registerPanel2.SetActive(false);
+        registerPanel1.SetActive(true);
+    }
+
+    async Task RegisterAccount()
     {
         string email = usernameInputRegister.text.Trim();
         string password = passwordInputRegister.text.Trim();
+
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        {
+            ShowError(errorMessageRegister, "E-mail en wachtwoord zijn verplicht.");
+            return;
+        }
+
+        if (!IsValidPassword(password))
+        {
+            ShowError(errorMessageRegister, "Wachtwoord moet minstens 10 karakters, 1 hoofdletter, 1 kleine letter, 1 cijfer en 1 speciaal teken bevatten.");
+            return;
+        }
+
+        User user = new User { email = email, Password = password };
+        bool success = await apiConnectieCode.Register(user);
+
+        if (!success)
+        {
+            ShowError(errorMessageRegister, "Registratie mislukt. Probeer opnieuw.");
+            return;
+        }
+
+        registeredUser = user;
+        ClearError(errorMessageRegister);
+
+        // Move to next panel
+        registerPanel1.SetActive(false);
+        registerPanel2.SetActive(true);
+    }
+
+    async Task RegisterUserData()
+    {
         string naamText = naam.text.Trim();
         string leeftijdText = leeftijd.text.Trim();
         string dokterNaam = dokter.text.Trim();
-        string eersteAfspraakText = eersteAfspraak.text.Trim();
+        string afspraakText = eersteAfspraak.text.Trim();
         string gekozenRoute = route.options[route.value].text;
+
         Regex validDateRegex = new Regex(@"^\d{2}-\d{2}-\d{4}$");
 
-        // Check if any field is empty
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) ||
-            string.IsNullOrEmpty(naamText) || string.IsNullOrEmpty(leeftijdText) ||
-            string.IsNullOrEmpty(dokterNaam))
+        if (string.IsNullOrEmpty(naamText) || string.IsNullOrEmpty(leeftijdText) || string.IsNullOrEmpty(dokterNaam))
         {
-            errorMessageRegister.text = "Alle velden moeten ingevuld zijn!";
-            errorMessageRegister.color = Color.red;
+            ShowError(errorMessageRegister, "Alle velden moeten ingevuld zijn!");
             return;
         }
 
-        // Validate password strength
-        if (!IsValidPassword(password))
-        {
-            errorMessageRegister.text = "Wachtwoord moet minstens 10 karakters, 1 hoofdletter, 1 kleine letter, 1 cijfer en 1 speciaal teken bevatten.";
-            errorMessageRegister.color = Color.red;
-            return;
-        }
-
-        // Validate leeftijd
         if (!validDateRegex.IsMatch(leeftijdText))
         {
-            errorMessageRegister.text = "Geboortedatum moet in het formaat dd-mm-jjjj zijn en mag geen letters bevatten!";
-            errorMessageRegister.color = Color.red;
+            ShowError(errorMessageRegister, "Geboortedatum moet in het formaat dd-mm-jjjj zijn.");
             return;
         }
 
-        // Validate eerste afspraak datum
-        string afspraakText = eersteAfspraak.text.Trim();
         if (!string.IsNullOrEmpty(afspraakText) && !validDateRegex.IsMatch(afspraakText))
         {
-            errorMessageRegister.text = "Eerste afspraak moet in het formaat dd-mm-jjjj zijn en mag geen letters bevatten!";
-            errorMessageRegister.color = Color.red;
+            ShowError(errorMessageRegister, "Eerste afspraak moet in het formaat dd-mm-jjjj zijn.");
             return;
         }
 
-        // Create User and UserData objects
-        User newUser = new User { email = email, Password = password };
         UserData userData = new UserData
         {
             naam = naamText,
@@ -93,22 +148,16 @@ public class LoginScene : MonoBehaviour
             userId = null
         };
 
-        // Call API for registration (adjust method signature if needed)
-        await apiConnectieCode.Register(newUser);
-        await apiConnectieCode.Login(newUser);
+        await apiConnectieCode.Login(registeredUser);
         await apiConnectieCode.SendUserData(userData);
+
+        SessionManager.IsLoggedIn = true;
+        SessionManager.Route = userData.route;
+
+        ClearError(errorMessageRegister);
+        errorMessageRegister.text = "Registratie succesvol!";
+        errorMessageRegister.color = Color.green;
     }
-
-
-    public void ClearRegisterFields()
-    {
-        usernameInputRegister.text = "";
-        passwordInputRegister.text = "";
-        naam.text = "";
-        leeftijd.text = "";
-        errorMessageRegister.text = ""; // Clear any error messages
-    }
-
 
     async Task Login()
     {
@@ -117,25 +166,53 @@ public class LoginScene : MonoBehaviour
 
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
         {
-            errorMessageLogin.text = "Gebruikersnaam of wachtwoord mag niet leeg zijn!";
-            errorMessageLogin.color = Color.red;
+            ShowError(errorMessageLogin, "Gebruikersnaam of wachtwoord mag niet leeg zijn!");
             return;
         }
-            User user = new User {email = email, Password = password};
-        bool succes = await apiConnectieCode.Login(user);
 
-        if (succes)
+        User user = new User { email = email, Password = password };
+        bool success = await apiConnectieCode.Login(user);
+
+        if (success)
         {
+            SessionManager.IsLoggedIn = true; // ✅ Mark session as logged in
             SceneManager.LoadScene("RoadMapScene");
         }
+        else
+        {
+            ShowError(errorMessageLogin, "Login mislukt. Controleer je gegevens.");
         }
+    }
+
 
     bool IsValidPassword(string password)
     {
         return password.Length >= 10 &&
-               Regex.IsMatch(password, @"[a-z]") &&   // Minstens 1 kleine letter
-               Regex.IsMatch(password, @"[A-Z]") &&   // Minstens 1 hoofdletter
-               Regex.IsMatch(password, @"\d") &&      // Minstens 1 cijfer
-               Regex.IsMatch(password, @"[\W_]");     // Minstens 1 speciaal teken
+               Regex.IsMatch(password, @"[a-z]") &&
+               Regex.IsMatch(password, @"[A-Z]") &&
+               Regex.IsMatch(password, @"\d") &&
+               Regex.IsMatch(password, @"[\W_]");
+    }
+
+    void ShowError(TMP_Text target, string message)
+    {
+        target.text = message;
+        target.color = Color.red;
+    }
+
+    void ClearError(TMP_Text target)
+    {
+        target.text = "";
+    }
+
+    public void ClearRegisterFields()
+    {
+        usernameInputRegister.text = "";
+        passwordInputRegister.text = "";
+        naam.text = "";
+        leeftijd.text = "";
+        dokter.text = "";
+        eersteAfspraak.text = "";
+        ClearError(errorMessageRegister);
     }
 }

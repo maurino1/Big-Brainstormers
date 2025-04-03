@@ -38,7 +38,7 @@ public class ApiConnectieCode : MonoBehaviour
     #region Login
 
     [ContextMenu("User/Register")]
-    public async Task Register(User user)
+    public async Task<bool> Register(User user)
     {
         IWebRequestReponse webRequestResponse = await userApiClient.Register(user);
 
@@ -49,12 +49,12 @@ public class ApiConnectieCode : MonoBehaviour
                 // TODO: Handle succes scenario;
                 feedbackTextRegister.text = "Registratie succesvol!";
                 feedbackTextRegister.color = Color.green;
-                break;
+                return true;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
                 Debug.Log("Register error: " + errorMessage);
                 // TODO: Handle error scenario. Show the errormessage to the user.
-                break;
+                return false;
             default:
                 throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
         }
