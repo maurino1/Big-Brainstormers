@@ -2516,7 +2516,6 @@ GameObject:
   - component: {fileID: 636659216}
   - component: {fileID: 636659215}
   - component: {fileID: 636659214}
-  - component: {fileID: 636659217}
   m_Layer: 5
   m_Name: hoestdrank
   m_TagString: Untagged
@@ -2638,18 +2637,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636659212}
   m_CullTransparentMesh: 1
---- !u!114 &636659217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636659212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2085e488e8de33347a5b723dd7888d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &643361754
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,7 +3074,6 @@ GameObject:
   - component: {fileID: 690847429}
   - component: {fileID: 690847428}
   - component: {fileID: 690847427}
-  - component: {fileID: 690847430}
   m_Layer: 5
   m_Name: paracetamol
   m_TagString: Untagged
@@ -3209,18 +3195,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690847425}
   m_CullTransparentMesh: 1
---- !u!114 &690847430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690847425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2085e488e8de33347a5b723dd7888d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &717017291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,7 +4487,6 @@ GameObject:
   - component: {fileID: 1182615045}
   - component: {fileID: 1182615047}
   - component: {fileID: 1182615046}
-  - component: {fileID: 1182615048}
   m_Layer: 5
   m_Name: hoestdrankpanel
   m_TagString: Untagged
@@ -4580,19 +4553,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182615044}
   m_CullTransparentMesh: 1
---- !u!114 &1182615048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182615044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3887794663242dc4b848bf0ff9ca33a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sluitTijd: 10
 --- !u!1 &1189767737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,7 +5593,6 @@ GameObject:
   - component: {fileID: 1420796389}
   - component: {fileID: 1420796391}
   - component: {fileID: 1420796390}
-  - component: {fileID: 1420796392}
   m_Layer: 5
   m_Name: pilpanel
   m_TagString: Untagged
@@ -5700,19 +5659,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420796388}
   m_CullTransparentMesh: 1
---- !u!114 &1420796392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420796388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3887794663242dc4b848bf0ff9ca33a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sluitTijd: 10
 --- !u!1 &1435475846
 GameObject:
   m_ObjectHideFlags: 0
