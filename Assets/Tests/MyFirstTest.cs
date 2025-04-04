@@ -56,4 +56,53 @@ public class DropAreaTests
         Assert.IsTrue(insidePanel.activeSelf, "Inside panel should be activated.");
         Assert.IsFalse(outsidePanel.activeSelf, "Outside panel should be deactivated.");
     }
+
+    [Test]
+    public void OnDrop_DoesNothing_WhenPointerDragIsNull()
+    {
+        // Simulate a drop with no draggable object
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            pointerDrag = null
+        };
+
+        dropArea.OnDrop(eventData);
+
+        // Panel state should remain unchanged
+        Assert.IsFalse(insidePanel.activeSelf, "Inside panel should remain inactive.");
+        Assert.IsTrue(outsidePanel.activeSelf, "Outside panel should remain active.");
+    }
+
+    [Test]
+    public void OnDrop_DoesNothing_WhenNoDraggableCharacterComponent()
+    {
+        var unrelatedObject = new GameObject("NotDraggable");
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            pointerDrag = unrelatedObject
+        };
+
+        dropArea.OnDrop(eventData);
+
+        Assert.IsFalse(insidePanel.activeSelf, "Inside panel should remain inactive.");
+        Assert.IsTrue(outsidePanel.activeSelf, "Outside panel should remain active.");
+
+        Object.DestroyImmediate(unrelatedObject);
+    }
+
+    [Test]
+    public void OnDrop_DoesNothing_WhenPanelsAreNotAssigned()
+    {
+        dropArea.insidePanel = null;
+        dropArea.outsidePanel = null;
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            pointerDrag = draggableObject
+        };
+
+        // Expect no crash or issues
+        Assert.DoesNotThrow(() => dropArea.OnDrop(eventData));
+    }
 }
