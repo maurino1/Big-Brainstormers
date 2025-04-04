@@ -14,7 +14,7 @@ public class CollectibleHover : MonoBehaviour
         startPos = transform.position; // Onthoud de startpositie
     }
 
-    void Update()
+    public void Update()
     {
         // Hover effect met een sinusgolf
         float newY = startPos.y + Mathf.Sin(Time.time * hoverSpeed) * hoverHeight;

@@ -16,7 +16,7 @@ public class AutoSwipeInfo : MonoBehaviour
     private float[] positions;
     private Coroutine swipeCoroutine;
 
-    void Start()
+    public void Start()
     {
         totalPages = scrollRect.content.childCount;
         positions = new float[totalPages];
@@ -41,7 +41,7 @@ public class AutoSwipeInfo : MonoBehaviour
         }
     }
 
-    void NextPage()
+    public void NextPage()
     {
         if (swipeCoroutine != null) StopCoroutine(swipeCoroutine);
 
@@ -50,7 +50,7 @@ public class AutoSwipeInfo : MonoBehaviour
         swipeCoroutine = StartCoroutine(AutoSwipe());
     }
 
-    void PreviousPage()
+    public void PreviousPage()
     {
         if (swipeCoroutine != null) StopCoroutine(swipeCoroutine);
 

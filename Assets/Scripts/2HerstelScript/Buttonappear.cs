@@ -12,7 +12,7 @@ public class Buttonappear : MonoBehaviour
         triggerButton.onClick.AddListener(ShowHiddenButton);
     }
 
-    void ShowHiddenButton()
+   public void ShowHiddenButton()
     {
         hiddenButton.gameObject.SetActive(true);
     }
